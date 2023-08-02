@@ -1,3 +1,5 @@
+
+
 import useData from "./useData";
 
 interface Platform{
@@ -7,11 +9,8 @@ interface Platform{
 }
 
 
-const usePlatforms= ()=> {
-    return(
+const usePlatforms= ()=> useData<Platform>('/platforms/lists/parents')
 
-        useData<Platform>('/platforms/lists/parents')
-    )
-}
+
 
 export default usePlatforms;
