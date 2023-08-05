@@ -18,7 +18,19 @@ interface Props{
 const PlatformSeleted = ({onSelectedPlatform}:Props) => {
   const {data} = usePlatforms();
 
-  
+  const choosePlatform =[
+    
+    {label:'PC'},
+    {label:'PlayStation'},
+    {label:'Xbox'},
+    {label:'iOS'},
+    {label:'Android'},
+    {label:'Apple Macintosh'},
+
+    
+  ]
+
+  const currentPlatform = choosePlatform.find(x => x.label===PlatformSeleted.name)
     
 
   return (
@@ -26,7 +38,7 @@ const PlatformSeleted = ({onSelectedPlatform}:Props) => {
     <>
     <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown/>} >
-            PLATFORM
+            {currentPlatform?.label || 'Choose a Platform'}
 
             <MenuList>
                 {data.map(platform => <MenuItem onClick={() =>onSelectedPlatform(platform)} key={platform.id}>{platform.name}</MenuItem>)}

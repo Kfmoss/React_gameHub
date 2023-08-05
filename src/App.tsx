@@ -9,17 +9,18 @@ import PlatformSeleted from "./components/PlatformSeleted";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 
+
 export interface GameQuery{
   genre : Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 function App() {
 
   const [gameQuery, setGameQuery] =useState<GameQuery>({} as GameQuery);
 
-  const [selectedGenre, setSelectedGenre]= useState<Genre | null>(null);
-  const [selectedPlatform, setSelectedPlatform]= useState<Platform | null>(null);
+
   
 
   return <Grid templateAreas={{ base: `"nav" "main"`,lg:`"nav nav" "aside main"`}}
@@ -44,8 +45,10 @@ function App() {
       <HStack spacing={5} padding={2}>
         
         <PlatformSeleted  selectedPlatform={gameQuery.platform} onSelectedPlatform={(platform)=>setGameQuery({...gameQuery,platform})}/>
-        <SortSelector/>
+        <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder)=> setGameQuery({...gameQuery, sortOrder})}/>
+      
       </HStack>
+        
         
       <GameGrid gameQuery={gameQuery}/>
       
