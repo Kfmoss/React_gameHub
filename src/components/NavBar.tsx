@@ -4,7 +4,11 @@ import ColorModeSwitch from './ColorModeSwitch'
 import SearchInput from './SearchInput'
 
 
-const NavBar = () => {
+interface Props{
+  onSearch: (searchText:string) => void;
+}
+
+const NavBar = ({onSearch}:Props) => {
   return (
     <>
 
@@ -14,7 +18,7 @@ const NavBar = () => {
       </Box>
       <Spacer/>
       <Box p={5}>
-      <SearchInput/>
+      <SearchInput onSearch={onSearch}/>
 
       </Box>
       <Spacer/>
