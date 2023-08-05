@@ -37,7 +37,7 @@ const PlatformSeleted = ({onSelectedPlatform}:Props) => {
 
     <>
     <Menu>
-        <MenuButton as={Button} rightIcon={<BsChevronDown/>} >
+        <MenuButton  as={Button} rightIcon={<BsChevronDown/>} >
             {currentPlatform?.label || 'Choose a Platform'}
 
             <MenuList>
