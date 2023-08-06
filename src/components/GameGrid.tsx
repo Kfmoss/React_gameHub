@@ -3,8 +3,7 @@ import useGames from "../hooks/useGames"
 import GameCards from "./GameCards";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genre } from "../hooks/useGenres";
-import {Platform} from "../hooks/useGames";
+
 import { GameQuery } from "../App";
 
 
