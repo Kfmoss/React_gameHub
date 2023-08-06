@@ -24,7 +24,7 @@ const SearchInput = ({onSearch}:Props) => {
     <InputGroup>
     <InputLeftElement children={<BsSearch/>}/>
     <InputRightElement children = {BuT}/>
-    <Input ref = {ref}borderRadius={'30px'} placeholder="  Search games... " variant='filled' focusBorderColor="white"></Input>
+    <Input  ref = {ref}borderRadius={'30px'} placeholder="  Search games... " variant='filled' focusBorderColor="white"></Input>
     </InputGroup>
     </form>
 
